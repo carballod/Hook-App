@@ -1,10 +1,8 @@
-
-
 import { useCounter, useFetch } from '../hooks';
-import { LoadingQuote, Quote } from './';
+import { LoadingQuote, Quote } from '../03-examples';
 
 
-export const MultipleCustomHooks = () => {
+export const Layout = () => {
 
     const { counter, increment } = useCounter(1);
     const { data, isLoading, hasError } = useFetch(`https://www.breakingbadapi.com/api/quotes/${ counter }`);
@@ -20,7 +18,7 @@ export const MultipleCustomHooks = () => {
                  ? <LoadingQuote />
                  : <Quote author={ author } quote={ quote } />
             }
-
+                      
             <button 
                 className="btn btn-primary"
                 disabled={ isLoading }
